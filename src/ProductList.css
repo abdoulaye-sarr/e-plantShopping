@@ -47,6 +47,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.product-category {
+    text-align: center;
+}
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +75,6 @@ body {
     border-radius: 5px;
     text-align: center;
     position: relative;
-    
     gap: 20px;
 }
 
