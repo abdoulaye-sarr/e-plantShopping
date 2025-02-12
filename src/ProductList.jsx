@@ -363,6 +363,7 @@ function ProductList() {
                 <h1 className="product-category">{plantObj.category}</h1>
                 <div className="product-list">
                   {plantObj.plants.map((plant, plantIndex) => {
+                    const isPlantAdded = cart.some(item => item.name === plant.name);
                     return (
                       <div className="product-card" key={plantIndex}>
                         <p className="product-title">{plant.name}</p>
@@ -374,7 +375,8 @@ function ProductList() {
                         <p className="product-price">{plant.cost}</p>
                         <p>{plant.description}</p>
                         <button
-                          className="product-button"
+                          disabled={isPlantAdded}
+                          className={`product-button ${isPlantAdded ? "disabled-button" : ""}`}
                           onClick={() => handleAddToCart(plant)}
                         >
                           Add to Cart
